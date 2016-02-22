@@ -8,8 +8,8 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "Employee")
-public class Employee {
+@Table(name = "Employee1")
+public class Employee1 {
 
     @Id
     @GeneratedValue
@@ -25,11 +25,11 @@ public class Employee {
     @Column(name = "dept")
     private String dept;
 
-    public Employee() {
+    public Employee1() {
 
     }
 
-    public Employee(String firstName, String lastName, String dept) {
+    public Employee1(String firstName, String lastName, String dept) {
         
         this.setFirstName(firstName);
         this.setLastName(lastName);

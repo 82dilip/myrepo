@@ -22,7 +22,7 @@ public class EmployeeTest {
 
     private static void createEmployee(String firstName, String lastName, String dept) {
         em.getTransaction().begin();
-        Employee emp = new Employee(firstName, lastName, dept);
+        Employee1 emp = new Employee1(firstName, lastName, dept);
         em.persist(emp);
         em.getTransaction().commit();
     }
