@@ -1,5 +1,5 @@
 package com.coderevisited.jpa;
-
+/*
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -67,4 +67,4 @@ public class Employee1 {
     public void setDept(String dept) {
         this.dept = dept;
     }
-}
+}*/

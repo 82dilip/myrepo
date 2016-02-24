@@ -9,6 +9,10 @@ import java.util.TreeSet;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import javax.swing.JOptionPane;
 
 public class EmployeeVactionCollection {
@@ -19,7 +23,24 @@ public class EmployeeVactionCollection {
 	  EntityManagerFactory emf = Persistence.createEntityManagerFactory("EmployeeService");
 	  em = emf.createEntityManager();
 	  
-	  createEmployeeVacation();
+	  //createEmployeeVacation();
+	  getEmployess();
+    }
+
+    private static void getEmployess() {
+	//em.getTransaction().begin();
+	CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Employee> cq = cb.createQuery(Employee.class);
+        Root<Employee> rootEntry = cq.from(Employee.class);
+        /*Path<VacationEntry> _account = rootEntry.get(Employee.VacationEntry);
+        Path<Long> _accountId = _account.get(Account_.id);
+
+        query.where(builder.equal(_accountId, accountId));
+*/        CriteriaQuery<Employee> all = cq.select(rootEntry);
+        TypedQuery<Employee> allQuery = em.createQuery(all);
+        List<Employee> emp = allQuery.getResultList();
+        System.out.println(emp.toString());
+	
     }
 
     private static void createEmployeeVacation() {

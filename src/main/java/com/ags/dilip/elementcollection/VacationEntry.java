@@ -1,12 +1,7 @@
 package com.ags.dilip.elementcollection;
 
-import java.sql.Date;
-import java.util.Calendar;
-
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Embeddable
 public class VacationEntry {
@@ -31,6 +26,13 @@ public class VacationEntry {
     public void setDaysTaken(int daysTaken) {
         this.daysTaken = daysTaken;
     }
+
+    @Override
+    public String toString() {
+	return "VacationEntry [startDate=" + startDate + ", daysTaken="
+		+ daysTaken + "]";
+    }
+    
     
     
 }
